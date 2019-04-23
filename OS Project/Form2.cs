@@ -66,5 +66,10 @@ namespace rr_program
         {          
             Environment.Exit(0);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "helpDocs.chm", "helpDoc3.htm");
+        }
     }
 }

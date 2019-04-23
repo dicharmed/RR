@@ -42,6 +42,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantum_Box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,7 +73,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(241, 328);
+            this.button1.Location = new System.Drawing.Point(298, 328);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 32);
             this.button1.TabIndex = 2;
@@ -189,7 +191,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(57, 328);
+            this.button2.Location = new System.Drawing.Point(12, 328);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(102, 32);
             this.button2.TabIndex = 81;
@@ -197,11 +199,32 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\dicha\\source\\repos\\RR_program\\OS Project\\helpDocs.chm";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.helpProvider1.SetHelpNavigator(this.button3, System.Windows.Forms.HelpNavigator.Topic);
+            this.button3.Location = new System.Drawing.Point(156, 328);
+            this.button3.Name = "button3";
+            this.helpProvider1.SetShowHelp(this.button3, true);
+            this.button3.Size = new System.Drawing.Size(102, 32);
+            this.button3.TabIndex = 82;
+            this.button3.Text = "Справка";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 409);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -243,5 +266,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn time;
         private System.Windows.Forms.DataGridViewTextBoxColumn switch_time;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.Button button3;
     }
 }

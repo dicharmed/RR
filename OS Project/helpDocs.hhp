@@ -1,0 +1,22 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=helpDocs.chm
+Contents file=c:\Users\dicha\source\repos\RR_program\OS Project\Table of Contents.hhc
+Default topic=C:\Users\dicha\source\repos\RR_program\OS Project\helpDoc3.htm
+Display compile progress=No
+Language=0x419 Русский (Россия)
+Title=Начало работы с приложением
+
+
+[FILES]
+C:\Users\dicha\source\repos\RR_program\OS Project\helpDoc1.htm
+C:\Users\dicha\source\repos\RR_program\OS Project\helpDoc2.htm
+C:\Users\dicha\source\repos\RR_program\OS Project\helpDoc3.htm
+C:\Users\dicha\source\repos\RR_program\OS Project\helpDoc4.htm
+C:\Users\dicha\source\repos\RR_program\OS Project\helpDoc5.htm
+
+[MAP]
+#include C:\Users\dicha\source\repos\RR_program\OS Project\defines.h
+
+[INFOTYPES]
+

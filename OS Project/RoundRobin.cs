@@ -77,14 +77,7 @@ namespace rr_program
                         }
                         //Only runs when the process is on its last cpu burst cycle
                         else
-                        {
-                            //Check if the process has an IO left before it finishes its last cpu burst cycle
-                            //while (NewProcess.switchTime > 0)
-                            //{
-                            //    ioExecution(multiNewProcesses, NewProcess.ID, NewProcess.switchTime);
-                            //    NewProcess.switchTime = NewProcess.switchTime - 1;
-                            //}
-
+                        {                            
                             //Process Status to Running as its Under Execution
                             NewProcess.status = "Выполняется";
                             updateDataGridView(dataGridView, multiNewProcesses);
@@ -101,12 +94,7 @@ namespace rr_program
                             drawRect(str, 0 + hv, (pictureBox1.Height - 70) - wh, Brushes.BlueViolet);
                         }  
                     }
-                    ////Execute Single IO after every CPU burst cycle
-                    //if (NewProcess.IO > 0)
-                    //{
-                    //    ioExecution(multiNewProcesses, NewProcess.ID, NewProcess.IO);
-                    //    NewProcess.IO = NewProcess.IO - 1;
-                    //}
+                
 
                     NewProcess last_one = multiNewProcesses.Last(); // this is for building rects in columns, so if its the last process  so the next one is gonna be set above the first one
 
@@ -160,33 +148,7 @@ namespace rr_program
             }
         }
 
-        ////----------------Process IO Execution Method
-        //public void ioExecution(NewProcess[] multiNewProcesses, int id, int interupt)
-        //{
-        //    //Change Process State to Waiting when it goes to IO
-        //    foreach (var NewProcess in multiNewProcesses)
-        //    {
-        //        if (NewProcess.ID == id && NewProcess.status != "Completed")
-        //        {
-        //            NewProcess.status = "Waiting";
-        //        }
-        //    }
-        //    updateDataGridView(dataGridView, multiNewProcesses);
-
-        //    //Execute the IO for 1 second
-        //    executionTimer(1);
-
-        //    //Change Process back to Ready State after IO has completed
-        //    foreach (var NewProcess in multiNewProcesses)
-        //    {
-        //        if (NewProcess.ID == id && NewProcess.status!="Completed")
-        //        {
-        //            NewProcess.status = "Ready";
-        //        }
-        //    }
-        //    updateDataGridView(dataGridView, multiNewProcesses);
-        //}
-
+        
         //----------------Process Execution Timer Method
         public void executionTimer(int tempTime)
         {

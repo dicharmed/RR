@@ -24,7 +24,7 @@ namespace rr_program
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            boxID.Text = "1";
+            boxID.Text = "4";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -50,10 +50,10 @@ namespace rr_program
             {
                 boxName.Text = "";
                 boxTime.Text = "";
-                boxSW.Text = "";
+                boxSW.Enabled = false;
  
                 int tempID = Convert.ToInt32(boxID.Text); //auto increment ID field
-                tempID = tempID + 1;
+                tempID = tempID + 4;
                 boxID.Text = tempID.ToString();
             }
         } //Сохранить
@@ -63,6 +63,7 @@ namespace rr_program
             boxName.Text = "";
             boxTime.Text = "";
             boxSW.Text = "";
+            //boxSW.Enabled = true;
         }
 
         //only controls btn and digits
