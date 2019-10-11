@@ -1,43 +1,71 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
-using System.Data;
 using System.Threading.Tasks;
+using System.Data;
 using Npgsql;
 
-namespace OS_Project
+namespace rr_program
 {
-    class Connection
+    class Connection:IDisposable
     {
-        string connectionString = "Server=127.0.0.1;Port=5432;User Id=postgres;Password=1234;Database=dbUniversity;";
-        public void getData(NpgsqlCommand query)
+        private string _conString = "Server=127.0.0.1;Port=5432;User Id=postgres;Password=1234;Database=dbUniversity;";
+        private NpgsqlConnection _npgsqlConnection;
+        private NpgsqlCommand _query;
+        public string qString;
+        public NpgsqlDataReader reader;        
+
+        public Connection(string qString) //query string
         {
-            NpgsqlConnection npgsqlConnection = new NpgsqlConnection(connectionString);
-            npgsqlConnection.Open();
+            this.qString = qString;
+        }
 
-            NpgsqlDataReader reader = query.ExecuteReader();
+        private NpgsqlConnection NpgsqlConn() //connect to DB
+        {
+            NpgsqlConnection сon= null;
 
-            object[] Obj = new object[5];
+            try
+            {
+                сon = new NpgsqlConnection(_conString);
+                сon.Open();
+
+                return сon;
+            }
+            catch
+            {
+                Dispose();
+                return null;
+            }
+            finally
+            {
+                //if(сon != null)
+                //{
+                //    сon.Close();
+                //}                
+            }
+            
+        }       
+
+        public NpgsqlDataReader getReader()
+        {
+            _npgsqlConnection = NpgsqlConn(); //connection to db
+            _query = new NpgsqlCommand(qString, _npgsqlConnection); //New query
+            reader = _query.ExecuteReader(); //read query result
+
 
             if (reader.HasRows)
             {
-
-                for (int i = 0; i <= Obj.Length;)
-                {
-                    foreach (IDataRecord data in reader)
-                    {
-                        Obj[i] = data["fio"];
-                        i++;
-                    }
-                }
-
-
+                return reader;
             }
 
+            return null;
 
-            npgsqlConnection.Close();
+        }
 
+        public void Dispose()
+        {
+            this.Dispose();
         }
     }
 }
