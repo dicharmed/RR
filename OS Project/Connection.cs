@@ -29,7 +29,7 @@ namespace rr_program
             {
                 сon = new NpgsqlConnection(_conString);
                 сon.Open();
-
+               
                 return сon;
             }
             catch
@@ -37,13 +37,13 @@ namespace rr_program
                 Dispose();
                 return null;
             }
-            finally
-            {
-                //if(сon != null)
-                //{
-                //    сon.Close();
-                //}                
-            }
+            //finally
+            //{
+            //    //if(сon != null)
+            //    //{
+            //    //    сon.Close();
+            //    //}                
+            //}
             
         }       
 
@@ -65,7 +65,7 @@ namespace rr_program
 
         public void Dispose()
         {
-            this.Dispose();
+            _npgsqlConnection.Close();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace rr_program
         public string groupName;
         public bool admitted;
         public Connection con;
+        public Query queryString = new Query();
 
         public Student() { }
         public Student(int id, string name, string login, string password, string groupName, bool admitted)
@@ -28,33 +29,55 @@ namespace rr_program
             this.groupName = groupName;
             this.admitted = admitted;
         }
-
         public List<Student> getStudents()
         {
-            con = new Connection("SELECT * FROM students, univ_groups WHERE group_id = id_group");
-            NpgsqlDataReader reader =  con.getReader();
-            
-            List<Student> students = new List<Student>();
-            if (reader.HasRows)
+            string str = queryString.getAllStudentsString();
+            return studentsData(str);            
+        }
+        public List<Student> getStudentByLogin(string login, string pswd)
+        {
+            string str = queryString.getAuthQueryString(login, pswd);
+            return studentsData(str);
+        }
+        public List<Student> getStudentById(int Id)
+        {
+            string str = queryString.getStudentByIdString(Id);
+            return studentsData(str);
+        }
+        public List<Student> studentsData(string str)
+        {            
+            con = new Connection(str);
+            try
             {
-                foreach (IDataRecord data in reader)
+                NpgsqlDataReader reader = con.getReader();
+                List<Student> student = new List<Student>();
+
+                if (reader.HasRows)
                 {
-                    int id = Convert.ToInt32(data["id_student"]);
-                    string name = (data["fio"]).ToString();
-                    string login = (data["login"]).ToString();
-                    string pswd = (data["login"]).ToString();
-                    string groupName = (data["name"]).ToString();
-                    bool admitted = Convert.ToBoolean(data["admittedto"]);
+                    foreach (IDataRecord data in reader)
+                    {
+                        int id = Convert.ToInt32(data["id_student"]);
+                        string name = (data["fio"]).ToString();
+                        string log = (data["login"]).ToString();
+                        string password = (data["pswd"]).ToString();
+                        string groupName = (data["name"]).ToString();
+                        bool admitted = Convert.ToBoolean(data["admittedto"]);
 
 
-                    students.Add(new Student(id, name, login, pswd, groupName, admitted));
-                }               
+                        student.Add(new Student(id, name, log, password, groupName, admitted));
+                    }
+
+                    return student;
+                }
+            }
+            catch
+            {
+                return null;
             }
 
-            return students;
+            return null;
         }
-
-      public void Dispose()
+        public void Dispose()
         {
             con.Dispose();
         }

@@ -17,7 +17,6 @@ namespace rr_program
         {
             InitializeComponent();
         }
-
        
         private void button1_Click(object sender, EventArgs e)
         {
@@ -26,36 +25,31 @@ namespace rr_program
             if (comboBox1.Text == "Студент")
             {
                 Student p = new Student();
-                List<Student> students = p.getStudents();
-          
-                for (int y = 0; y < students.Count; y++)
-                {
-                    if (students[y].login == getHash(textBox1.Text) && students[y].password == getHash(textBox2.Text))
-                    {
-                        label4.Text = students[y].name;
-                    }
+                List<Student> student = p.getStudentByLogin(getHash(textBox1.Text), getHash(textBox2.Text));
 
-                    if (students[y].login != getHash(textBox1.Text) || students[y].password != getHash(textBox2.Text))
-                    {
-                        label4.Text = "Неверный логин/пароль!";
-                        ClearTextBoxes();
-                    }
-
+                if(student != null)
+                {                    
+                    Form4 studentForm = new Form4(student[0].id); //передача id студента
+                    studentForm.Show();
+                    p.Dispose(); //connection close
+                    this.Hide();                    
                 }
-
-                //p.Dispose();
-
-                //connection.close!!!!!!!!!!!!!!!1
+                else
+                {
+                    label4.Text = "Неверный логин/пароль!";
+                    ClearTextBoxes();
+                }         
+               
             }
-            else
+            else //Преподаватель
             {
-                //textBox2.Text = comboBox1.Text;
+                
             }
 
             
 
-        }
-
+        }       
+   
         private string getHash(string str)
         {
             byte[] hash = Encoding.ASCII.GetBytes(str);
