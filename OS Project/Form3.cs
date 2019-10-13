@@ -43,7 +43,21 @@ namespace rr_program
             }
             else //Преподаватель
             {
-                
+                Teacher p = new Teacher();
+                List<Teacher> teacher = p.getTeacherByLogin(getHash(textBox1.Text), getHash(textBox2.Text));
+
+                if (teacher != null)
+                {
+                    Form5 teacherForm = new Form5(teacher[0].id); //передача id студента
+                    teacherForm.Show();
+                    p.Dispose(); //connection close
+                    this.Hide();
+                }
+                else
+                {
+                    label4.Text = "Неверный логин/пароль!";
+                    ClearTextBoxes();
+                }
             }
 
             

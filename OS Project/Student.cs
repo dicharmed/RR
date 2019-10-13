@@ -56,15 +56,15 @@ namespace rr_program
                 {
                     foreach (IDataRecord data in reader)
                     {
-                        int id = Convert.ToInt32(data["id_student"]);
-                        string name = (data["fio"]).ToString();
-                        string log = (data["login"]).ToString();
-                        string password = (data["pswd"]).ToString();
-                        string groupName = (data["name"]).ToString();
-                        bool admitted = Convert.ToBoolean(data["admittedto"]);
+                        id = Convert.ToInt32(data["id_student"]);
+                        name = (data["fio"]).ToString();
+                        login = (data["login"]).ToString();
+                        password = (data["pswd"]).ToString();
+                        groupName = (data["name"]).ToString();
+                        admitted = Convert.ToBoolean(data["admittedto"]);
 
 
-                        student.Add(new Student(id, name, log, password, groupName, admitted));
+                        student.Add(new Student(id, name, login, password, groupName, admitted));
                     }
 
                     return student;
