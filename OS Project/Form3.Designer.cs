@@ -99,8 +99,6 @@
             // 
             // button1
             // 
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(70, 176);
@@ -110,6 +108,8 @@
             this.button1.Text = "Войти";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(0, 79, 153);
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(0, 66, 128);
             // 
             // textBox2
             // 
@@ -121,6 +121,7 @@
             this.textBox2.Size = new System.Drawing.Size(158, 20);
             this.textBox2.TabIndex = 1;
             this.textBox2.UseSystemPasswordChar = true;
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(0, 38, 77);
             // 
             // textBox1
             // 
@@ -131,6 +132,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(158, 20);
             this.textBox1.TabIndex = 0;
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(0, 38, 77);
             // 
             // label4
             // 
@@ -144,8 +146,6 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlText;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(39, 171);
@@ -155,6 +155,9 @@
             this.button2.Text = "Студент";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(153, 206, 255);
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(153, 206, 255);
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(0, 38, 77);
             // 
             // button3
             // 
@@ -215,7 +218,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.BackColor = System.Drawing.Color.FromArgb(0, 38, 77);
             this.ClientSize = new System.Drawing.Size(382, 531);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel4);

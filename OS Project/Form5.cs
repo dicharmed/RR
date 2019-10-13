@@ -32,5 +32,17 @@ namespace rr_program
             label1.Text = st[0].fio + ", " + st[0].positionName;
             textBox1.Text = id.ToString();
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form3 authForm = new Form3();
+            authForm.Show();
+        }
     }
 }

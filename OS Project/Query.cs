@@ -25,6 +25,7 @@ namespace rr_program
             return $"SELECT * FROM students, univ_groups WHERE group_id = id_group and login = '{login}' and pswd = '{pswd}'";
         }
 
+
         //TEACHER QUERIES
         public string getTeacherAuthQueryString(string login, string pswd)
         {
@@ -33,6 +34,12 @@ namespace rr_program
         public string getTeacherByIdString(int id)
         {
             return $"SELECT * FROM teachers, positions WHERE position_id = id_pos and id_teacher = '{id}'";
+        }
+
+        //PROGRESS
+        public string getStudentProgressString(int id)
+        {
+            return $"SELECT * FROM progress WHERE student_id = '{id}'";
         }
     }
 }

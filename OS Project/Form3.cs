@@ -84,22 +84,7 @@ namespace rr_program
 
         //design
         private void Form3_Load(object sender, EventArgs e)
-        {
-            //form
-            this.BackColor = Color.FromArgb(0, 38, 77);
-
-            //textBoxes
-            this.textBox1.BackColor = Color.FromArgb(0, 38, 77);
-            this.textBox2.BackColor = Color.FromArgb(0, 38, 77);
-
-            //button Вход
-            this.button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 79, 153);
-            this.button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 66, 128);
-
-            //button Student
-            this.button2.BackColor = Color.FromArgb(153, 206, 255);
-            this.button2.FlatAppearance.BorderColor = Color.FromArgb(153, 206, 255);
-            this.button2.ForeColor = Color.FromArgb(0, 38, 77);
+        {            
         }
 
         private void button3_Click(object sender, EventArgs e)//teacher
