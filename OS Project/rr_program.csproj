@@ -118,7 +118,7 @@
     <Compile Include="RoundRobin.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Teacher.cs" />
-    <None Include="img\close.png" />
+    <Compile Include="UniStructure.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -8,7 +8,6 @@ namespace rr_program
 {
     class Query
     {   
-
         public Query() { }
 
         //STUDENT QUERIES
@@ -19,6 +18,10 @@ namespace rr_program
         public string getStudentByIdString(int id)
         {
             return $"SELECT * FROM students, univ_groups WHERE group_id = id_group and id_student = '{id}'";
+        }
+        public string getStudentByGroupString(int id)
+        {
+            return $"SELECT * FROM students, univ_groups WHERE group_id = id_group and group_id = '{id}'";
         }
         public string getAuthQueryString(string login, string pswd)
         {
@@ -41,5 +44,19 @@ namespace rr_program
         {
             return $"SELECT * FROM progress WHERE student_id = '{id}'";
         }
+
+        //SPECIALTIES
+        public string getSpecialtiesString()
+        {
+            return "SELECT * FROM specialities";
+        }
+
+        //GROUPS
+
+        public string getGroupsString(int id_spec)
+        {
+            return $"SELECT * FROM univ_groups WHERE specialty_id = '{id_spec}'";
+        }
+
     }
 }

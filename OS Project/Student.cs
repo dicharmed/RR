@@ -44,6 +44,11 @@ namespace rr_program
             string str = queryString.getStudentByIdString(Id);
             return studentsData(str);
         }
+        public List<Student> getStudentByGroup(int Id)
+        {
+            string str = queryString.getStudentByGroupString(Id);
+            return studentsData(str);
+        }
         public List<Student> studentsData(string str)
         {            
             con = new Connection(str);

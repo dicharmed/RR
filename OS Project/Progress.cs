@@ -15,6 +15,7 @@ namespace rr_program
         public Connection con;
         public Query queryString = new Query();
 
+        
 
         public Progress() { }
 
@@ -26,7 +27,7 @@ namespace rr_program
             this.test3 = test3;
             this.theory = theory;
         }
-
+        
         public List<Progress> getStudentProgress(int id)
         {
             string str = queryString.getStudentProgressString(id);
