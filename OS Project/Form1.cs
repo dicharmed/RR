@@ -14,12 +14,14 @@ namespace rr_program
     {
         NewProcess p1;
         Form2 form;
+        public int id;
 
-        public Form1()
+        public Form1(int id)
         {
             InitializeComponent();
             form = new Form2();
             form.Show();
+            this.id = id;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -96,6 +98,14 @@ namespace rr_program
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
 
+        private void label6_Click(object sender, EventArgs e)
+        {
+            this.Close(); //form1
+            form.Close(); //form2
 
+            //open students form
+            Form4 studentsForm = new Form4(id);
+            studentsForm.Show();
+        }
     }
 }

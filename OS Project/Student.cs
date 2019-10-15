@@ -49,6 +49,21 @@ namespace rr_program
             string str = queryString.getStudentByGroupString(Id);
             return studentsData(str);
         }
+        public void updateStudentsAccess(int Id)
+        {   
+            string str = queryString.updateStudentAccess(Id);
+            update(str);
+        }
+        public void updateStudentsResults(int Id)
+        {
+            string str = queryString.updateStudentResults(Id);
+            update(str);
+        }
+        public void update(string str)
+        {
+            con = new Connection(str);
+            con.UpdateConnection();
+        }
         public List<Student> studentsData(string str)
         {            
             con = new Connection(str);

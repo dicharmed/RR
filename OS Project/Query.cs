@@ -52,10 +52,20 @@ namespace rr_program
         }
 
         //GROUPS
-
         public string getGroupsString(int id_spec)
         {
             return $"SELECT * FROM univ_groups WHERE specialty_id = '{id_spec}'";
+        }
+
+        //UPDATE
+        public string updateStudentAccess(int id)
+        {
+            return $"UPDATE students SET admittedto = NOT admittedto WHERE id_student = '{id}'";
+        }
+
+        public string updateStudentResults(int id)
+        {
+            return $"UPDATE progress SET test_1 = null WHERE student_id = '{id}'";
         }
 
     }

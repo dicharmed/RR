@@ -25,5 +25,6 @@ namespace rr_program
             status = "Готов";
             remainingTime = 0;
         }
+
     }
 }

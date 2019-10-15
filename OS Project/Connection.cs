@@ -46,7 +46,13 @@ namespace rr_program
             //}
             
         }       
-
+        public void UpdateConnection()
+        {
+            _npgsqlConnection = NpgsqlConn(); //connection to db
+            _query = new NpgsqlCommand(qString, _npgsqlConnection); //New query
+            _query.ExecuteNonQuery();
+            _npgsqlConnection.Close();
+        }
         public NpgsqlDataReader getReader()
         {
             _npgsqlConnection = NpgsqlConn(); //connection to db

@@ -13,7 +13,7 @@ namespace rr_program
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form5(2));
+            Application.Run(new Form3());
         }
     }
 }

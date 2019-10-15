@@ -14,7 +14,6 @@ namespace rr_program
     {
         public int id;
         Query query = new Query();
-        Connection connection;
         bool isAdmitted = false;
         public Form5(int id)
         {
@@ -69,9 +68,7 @@ namespace rr_program
             }catch
             {
                 textBox2.Text = "Выберите студента для отображения информации о его успеваемости";
-            }
-            
-            
+            }         
 
         }
         private void getListSpecialties()
@@ -166,23 +163,29 @@ namespace rr_program
         private void label6_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
-        }
+        } //exit
         private void label2_Click(object sender, EventArgs e)
         {
             this.Close();
             Form3 authForm = new Form3();
             authForm.Show();
-        }
+        } //basck to auth
 
-        private void button1_Click(object sender, EventArgs e)//
+        private void button1_Click(object sender, EventArgs e)//update access
         {
-            if(isAdmitted == true) //допущен --> запретить
-            {
+            Student s = new Student();
+            int key = ((KeyValuePair<int, string>)comboBox3.SelectedItem).Key;
+            s.updateStudentsAccess(key);
 
-            }else // ---> разрешить
-            {
+            getStudentsInfoInBox();
+        }
+        private void button2_Click(object sender, EventArgs e) //update test results
+        {
+            Student s = new Student();
+            int key = ((KeyValuePair<int, string>)comboBox3.SelectedItem).Key;
+            s.updateStudentsResults(key);
 
-            }
+            getStudentsInfoInBox();
         }
     }
 }
