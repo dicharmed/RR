@@ -79,60 +79,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="AppClasses\Connection.cs" />
+    <Compile Include="AppForms\Demo_AddProccess.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AppForms\Demo_AddProccess.Designer.cs">
+      <DependentUpon>Demo_AddProccess.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="AppForms\Demo_Graphic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="AppForms\Demo_Graphic.Designer.cs">
+      <DependentUpon>Demo_Graphic.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="AppForms\Auth.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="AppForms\Auth.Designer.cs">
+      <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="AppForms\StudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="AppForms\StudentForm.Designer.cs">
+      <DependentUpon>StudentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="AppForms\TeacherForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="AppForms\TeacherForm.Designer.cs">
+      <DependentUpon>TeacherForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewProcess.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Progress.cs" />
+    <Compile Include="AppClasses\NewProcess.cs" />
+    <Compile Include="AppClasses\Program.cs" />
+    <Compile Include="AppClasses\Progress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Query.cs" />
-    <Compile Include="RoundRobin.cs" />
-    <Compile Include="Student.cs" />
-    <Compile Include="Teacher.cs" />
-    <Compile Include="UniStructure.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AppClasses\Query.cs" />
+    <Compile Include="AppClasses\RoundRobin.cs" />
+    <Compile Include="AppClasses\Student.cs" />
+    <Compile Include="AppClasses\Teacher.cs" />
+    <Compile Include="AppClasses\UniStructure.cs" />
+    <EmbeddedResource Include="AppForms\Demo_AddProccess.resx">
+      <DependentUpon>Demo_AddProccess.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="AppForms\Demo_Graphic.resx">
+      <DependentUpon>Demo_Graphic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="AppForms\Auth.resx">
+      <DependentUpon>Auth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <EmbeddedResource Include="AppForms\StudentForm.resx">
+      <DependentUpon>StudentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <EmbeddedResource Include="AppForms\TeacherForm.resx">
+      <DependentUpon>TeacherForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
