@@ -60,7 +60,9 @@ namespace rr_program
         {
             if(theory == true)
             {
-                //show test
+                this.Close();
+                Test formTest = new Test(id);
+                formTest.Show();
             }
             else
             {

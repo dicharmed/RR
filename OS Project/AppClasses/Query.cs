@@ -68,5 +68,10 @@ namespace rr_program
             return $"UPDATE progress SET test_1 = null WHERE student_id = '{id}'";
         }
 
+        public string updateStudentTest(int id, int testResult)
+        {
+            return $"UPDATE progress SET test_1 = '{testResult}' WHERE student_id = '{id}'";
+        }
+
     }
 }

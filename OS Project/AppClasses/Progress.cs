@@ -34,6 +34,16 @@ namespace rr_program
             return progressData(str);
         }
 
+        public void updateStudentsTest(int Id, int testRes)
+        {
+            string str = queryString.updateStudentTest(Id, testRes);
+            update(str);
+        }
+        public void update(string str)
+        {
+            con = new Connection(str);
+            con.UpdateConnection();
+        }
         public List<Progress> progressData(string str)
         {
             con = new Connection(str);
