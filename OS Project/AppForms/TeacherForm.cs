@@ -187,5 +187,10 @@ namespace rr_program
 
             getStudentsInfoInBox();
         }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getStudentsInfoInBox();
+        }
     }
 }

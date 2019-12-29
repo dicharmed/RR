@@ -44,7 +44,7 @@ namespace rr_program
        
         private void button3_Click(object sender, EventArgs e) //demo
         {
-            if (test1 >= 0 && test2 >= 0 && test3 >= 0)
+            if (test1 >= 0) //&& test2 >= 0 && test3 >= 0
             {
                 this.Close();
                 Form1 formDemo = new Form1(id);
